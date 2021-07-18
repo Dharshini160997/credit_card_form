@@ -1,5 +1,13 @@
 ruby 2.6.3
+
+
 Rails 5.2.6
+
+
 bundle install
+
+
 for running the migrations => rake db:migrate
+
+
 for server => rails s
