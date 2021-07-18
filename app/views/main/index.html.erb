@@ -1,0 +1,110 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 50%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  margin-top:20px;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top:20px;
+  width: 50%;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+ .btn {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 12px 16px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top:10px;
+        }
+
+      .btn:hover {
+        background-color: #45a049;
+      }
+      .table-icon{
+        margin-right:10px;
+      }
+</style>
+</head>
+<body>
+
+
+<%= form_tag("/submit", :method => "post" , class: 'main-form') do %>
+  <div class = "row">
+   <%= label_tag(:username, "Name:") %>
+   <%= text_field_tag(:username) %>
+  </div>
+  <div class = "row">
+   <%= label_tag(:email, "Email:") %>
+   <%= text_field_tag(:email) %>
+  </div>
+  <div class = "row">
+   <%= label_tag(:pancard, "PanCard:") %>
+   <%= text_field_tag(:pancard) %>
+  </div>
+  <div class = "row">
+   <%= label_tag(:aadharcard, "Aadhar Card:") %>
+   <%= text_field_tag(:aadharcard) %>
+  </div>
+  <div class = "row">
+   <%= label_tag(:bank_acnt_number, "Bank Account Number:") %>
+   <%= text_field_tag(:bank_acnt_number) %>
+  </div>
+  <div class = "row">
+   <%= label_tag(:ifsc_code, "Bank IFSC code:") %>
+   <%= text_field_tag(:ifsc_code) %>
+  </div>
+  <div class = "row">
+   <%= label_tag(:inflow, "Monthly recurring inflow:") %>
+   <%= text_field_tag(:inflow) %>
+  </div>
+  <div class = "row">
+   <%= label_tag(:outflow, "Monthly recurring out flow:") %>
+   <%= text_field_tag(:outflow) %>
+  </div>
+  <div class = "row">
+   <%= submit_tag("Submit") %>
+  </div>
+<% end %>
+<a href = "/credit/table"> <button class = "btn"> <i class="fa fa-table table-icon"></i>View table </button></a>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<table class="my_table">
+  <tr>
+    <th>S.no</th>
+    <th>Email</th>
+    <th>Credit Limit</th>
+    <th>System Recommendation</th>
+  </tr>
+  <%i=1%>
+  <%table_data.each do |row|%>
+  <tr>
+    <td><%=i%></td>
+    <td><%=row['email']%></td>
+    <td><%=row['credit_limit']%></td>
+    <td><%=row['credibility_score'] > 2 ? "Approved" : "Rejected"%></td>
+  </tr>
+  <%i = i+1%>
+  <%end%>
+</table>
+<a href = "../"><button class="btn"><i class="fa fa-home"></i> Home</button></a>
+</body>
+<style>
+table {
+  border-collapse: collapse;
+}
+ th {
+  background: #ccc;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background: #efefef;
+}
+
+tr:hover {
+  background: #d1d1d1;
+}
+.btn {
+  background-color: #989898	;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top:10px;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: #808080	;
+}
+</style>
