@@ -1,5 +1,5 @@
 class CreditCardController < ApplicationController
-  infinity = Float::INFINITY
+  @infinity = Float::INFINITY
   def submit_details
     begin
       if ValidationHelper.validate params
@@ -31,7 +31,7 @@ class CreditCardController < ApplicationController
       when 0..5000  then "first"
       when 5001..10000  then "second"
       when 10001..20000 then "third"
-      when 20001..infinity then "fourth"
+      when 20001..@infinity then "fourth"
     end
   end
 
